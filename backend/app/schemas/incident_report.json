@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "IncidentReport",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "title",
+    "severity",
+    "affected_service",
+    "reported_at",
+    "description",
+    "status"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 100
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"]
+    },
+    "affected_service": {
+      "type": "string"
+    },
+    "reported_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "affected_users": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "description": {
+      "type": "string",
+      "minLength": 20
+    },
+    "root_cause": {
+      "type": "string"
+    },
+    "resolution_steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["open", "investigating", "resolved"]
+    },
+    "assignee": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "team": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
+

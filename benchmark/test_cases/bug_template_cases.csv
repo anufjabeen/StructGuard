@@ -1,0 +1,11 @@
+case_id,input_text,expected_severity,expected_component,expected_environment,expected_status,expected_browser,notes
+bug_001,"In production, the checkout submit button fails in Chrome after valid card details are entered. Severity high. Expected payment submission, actual error banner. Status triaged.",high,checkout,production,triaged,Chrome,checkout browser bug
+bug_002,"The search results page in staging shows a blank state after applying filters. Medium severity. Expected filtered results, actual empty panel. Status new.",medium,search,staging,new,,staging filtering regression
+bug_003,"On the development environment, profile image upload returns a 400 error. Low severity. Expected upload success, actual validation error. Status new.",low,profile,development,new,,developer environment issue
+bug_004,"Production authentication modal loops after MFA approval in Edge. Critical severity because users cannot sign in. Status triaged.",critical,authentication,production,triaged,Edge,auth login blocker
+bug_005,"In test, reports export downloads a zero byte CSV after selecting date range. Medium severity. Expected populated CSV, actual empty file. Status in progress.",medium,reports,test,in_progress,,export regression
+bug_006,"Production inventory page shows negative stock values in Firefox on Windows. High severity. Expected non-negative inventory counts, actual negative counts. Status triaged.",high,inventory,production,triaged,Firefox,data display issue
+bug_007,"Staging notifications settings page does not save email preference changes in Safari. Low severity. Expected preferences saved, actual settings revert. Status new.",low,notifications,staging,new,Safari,settings persistence
+bug_008,"Production admin billing page crashes on invoice search. Critical severity. Expected search results, actual page crash. Status in progress.",critical,billing,production,in_progress,,admin crash
+bug_009,"Development audit log filter ignores the selected model field. Low severity. Expected filtered logs, actual unfiltered logs. Status fixed.",low,audit_log,development,fixed,,fixed dev bug
+bug_010,"Test environment schema editor accepts invalid enum syntax. Medium severity. Expected validation error, actual schema saved. Status triaged.",medium,schema_editor,test,triaged,,schema editor validation

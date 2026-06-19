@@ -1,0 +1,158 @@
+[
+  {
+    "case_id": "bug_001",
+    "input_text": "In production, the checkout submit button fails in Chrome after valid card details are entered. Severity high. Expected payment submission, actual error banner. Status triaged.",
+    "expected_output": {
+      "title": "Checkout submit button fails",
+      "severity": "high",
+      "component": "checkout",
+      "environment": "production",
+      "steps_to_reproduce": ["Open checkout in Chrome", "Enter valid card details", "Submit payment"],
+      "expected_behavior": "The payment should submit successfully and create an order.",
+      "actual_behavior": "The submit button fails and displays an error banner.",
+      "reported_at": "2026-06-16T10:14:00Z",
+      "browser": "Chrome",
+      "status": "triaged"
+    }
+  },
+  {
+    "case_id": "bug_002",
+    "input_text": "The search results page in staging shows a blank state after applying filters. Medium severity. Expected filtered results, actual empty panel. Status new.",
+    "expected_output": {
+      "title": "Search filters show blank results",
+      "severity": "medium",
+      "component": "search",
+      "environment": "staging",
+      "steps_to_reproduce": ["Open search results in staging", "Apply filters"],
+      "expected_behavior": "Filtered search results should be displayed.",
+      "actual_behavior": "The page shows a blank results panel.",
+      "reported_at": "2026-06-16T11:05:00Z",
+      "status": "new"
+    }
+  },
+  {
+    "case_id": "bug_003",
+    "input_text": "On the development environment, profile image upload returns a 400 error. Low severity. Expected upload success, actual validation error. Status new.",
+    "expected_output": {
+      "title": "Profile image upload returns 400",
+      "severity": "low",
+      "component": "profile",
+      "environment": "development",
+      "steps_to_reproduce": ["Open profile settings", "Upload a valid profile image"],
+      "expected_behavior": "The image should upload successfully.",
+      "actual_behavior": "The upload returns a 400 validation error.",
+      "reported_at": "2026-06-16T12:00:00Z",
+      "status": "new"
+    }
+  },
+  {
+    "case_id": "bug_004",
+    "input_text": "Production authentication modal loops after MFA approval in Edge. Critical severity because users cannot sign in. Status triaged.",
+    "expected_output": {
+      "title": "Authentication modal loops after MFA",
+      "severity": "critical",
+      "component": "authentication",
+      "environment": "production",
+      "steps_to_reproduce": ["Open sign in flow in Edge", "Approve MFA challenge"],
+      "expected_behavior": "The user should complete sign in after MFA approval.",
+      "actual_behavior": "The authentication modal loops and the user cannot sign in.",
+      "reported_at": "2026-06-16T12:45:00Z",
+      "browser": "Edge",
+      "status": "triaged"
+    }
+  },
+  {
+    "case_id": "bug_005",
+    "input_text": "In test, reports export downloads a zero byte CSV after selecting date range. Medium severity. Expected populated CSV, actual empty file. Status in progress.",
+    "expected_output": {
+      "title": "Reports export downloads zero byte CSV",
+      "severity": "medium",
+      "component": "reports",
+      "environment": "test",
+      "steps_to_reproduce": ["Open reports export", "Select a date range", "Download CSV"],
+      "expected_behavior": "The exported CSV should contain report data.",
+      "actual_behavior": "The downloaded CSV is a zero byte file.",
+      "reported_at": "2026-06-16T13:30:00Z",
+      "status": "in_progress"
+    }
+  },
+  {
+    "case_id": "bug_006",
+    "input_text": "Production inventory page shows negative stock values in Firefox on Windows. High severity. Expected non-negative inventory counts, actual negative counts. Status triaged.",
+    "expected_output": {
+      "title": "Inventory page shows negative stock",
+      "severity": "high",
+      "component": "inventory",
+      "environment": "production",
+      "steps_to_reproduce": ["Open inventory page in Firefox on Windows", "View stock counts"],
+      "expected_behavior": "Inventory counts should never display negative values.",
+      "actual_behavior": "The page displays negative stock values.",
+      "reported_at": "2026-06-16T14:10:00Z",
+      "browser": "Firefox",
+      "os": "Windows",
+      "status": "triaged"
+    }
+  },
+  {
+    "case_id": "bug_007",
+    "input_text": "Staging notifications settings page does not save email preference changes in Safari. Low severity. Expected preferences saved, actual settings revert. Status new.",
+    "expected_output": {
+      "title": "Notifications preferences do not save",
+      "severity": "low",
+      "component": "notifications",
+      "environment": "staging",
+      "steps_to_reproduce": ["Open notification settings in Safari", "Change email preferences", "Save settings"],
+      "expected_behavior": "Email preference changes should be saved.",
+      "actual_behavior": "The settings revert after save.",
+      "reported_at": "2026-06-16T15:00:00Z",
+      "browser": "Safari",
+      "status": "new"
+    }
+  },
+  {
+    "case_id": "bug_008",
+    "input_text": "Production admin billing page crashes on invoice search. Critical severity. Expected search results, actual page crash. Status in progress.",
+    "expected_output": {
+      "title": "Admin billing page crashes on invoice search",
+      "severity": "critical",
+      "component": "billing",
+      "environment": "production",
+      "steps_to_reproduce": ["Open admin billing page", "Search for an invoice"],
+      "expected_behavior": "Invoice search results should be displayed.",
+      "actual_behavior": "The page crashes during invoice search.",
+      "reported_at": "2026-06-16T16:18:00Z",
+      "status": "in_progress"
+    }
+  },
+  {
+    "case_id": "bug_009",
+    "input_text": "Development audit log filter ignores the selected model field. Low severity. Expected filtered logs, actual unfiltered logs. Status fixed.",
+    "expected_output": {
+      "title": "Audit log model filter ignored",
+      "severity": "low",
+      "component": "audit_log",
+      "environment": "development",
+      "steps_to_reproduce": ["Open audit log", "Select a model filter"],
+      "expected_behavior": "The audit log should show only matching model rows.",
+      "actual_behavior": "The audit log continues to show unfiltered rows.",
+      "reported_at": "2026-06-16T17:00:00Z",
+      "status": "fixed"
+    }
+  },
+  {
+    "case_id": "bug_010",
+    "input_text": "Test environment schema editor accepts invalid enum syntax. Medium severity. Expected validation error, actual schema saved. Status triaged.",
+    "expected_output": {
+      "title": "Schema editor accepts invalid enum syntax",
+      "severity": "medium",
+      "component": "schema_editor",
+      "environment": "test",
+      "steps_to_reproduce": ["Open schema editor", "Enter invalid enum syntax", "Save schema"],
+      "expected_behavior": "The editor should reject invalid enum syntax.",
+      "actual_behavior": "The editor saves the invalid schema.",
+      "reported_at": "2026-06-16T18:25:00Z",
+      "status": "triaged"
+    }
+  }
+]
+

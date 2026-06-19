@@ -1,0 +1,11 @@
+case_id,input_text,expected_severity,expected_affected_service,expected_status,expected_affected_users,notes
+incident_001,"Checkout stopped working at 2026-06-16T10:14:00Z. Severity is critical and about 500 users are affected. SRE is investigating.",critical,checkout,investigating,500,baseline outage
+incident_002,"Search latency increased in production at 2026-06-16T11:05:00Z. Impact is low, no users are blocked, and the incident is still open.",low,search,open,0,low-severity latency
+incident_003,"Payments API returned 500 errors from 2026-06-16T09:20:00Z. Severity high. 220 users could not complete purchases. Payments team is investigating.",high,payments,investigating,220,expected semantic match
+incident_004,"Authentication callbacks intermittently failed around 2026-06-16T12:45:00Z. Medium severity, about 35 users affected, status investigating.",medium,authentication,investigating,35,enum and service extraction
+incident_005,"Inventory cache served stale stock counts at 2026-06-16T13:30:00Z. Medium severity. No users were blocked. The issue was resolved after cache invalidation.",medium,inventory,resolved,0,resolved cache incident
+incident_006,"Email notifications were delayed starting 2026-06-16T14:10:00Z. Low severity. 1200 users received late notifications and the incident remains open.",low,email,open,1200,large count low impact
+incident_007,"Primary database failover started at 2026-06-16T15:02:00Z after the primary node became unreachable. Critical severity. 3200 users saw checkout errors. SRE is investigating.",critical,database,investigating,3200,critical infrastructure
+incident_008,"Feature flag service timed out at 2026-06-16T16:18:00Z and blocked rollout checks. High severity, 80 internal users affected. Restarting the service resolved it.",high,feature_flags,resolved,80,internal service
+incident_009,"The CDN TLS certificate expired at 2026-06-16T17:40:00Z for storefront traffic. Critical severity. Around 10000 users could not load the site. Certificate renewal resolved the incident.",critical,cdn,resolved,10000,certificate expiry
+incident_010,"Analytics ingestion backlog began at 2026-06-16T18:25:00Z. Low severity. No user-facing impact, affected service analytics, status open.",low,analytics,open,0,no user impact

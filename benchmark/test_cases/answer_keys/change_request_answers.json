@@ -1,0 +1,169 @@
+[
+  {
+    "case_id": "change_001",
+    "input_text": "Request a normal change to increase the checkout database connection pool on 2026-06-17 from 02:00 UTC to 03:00 UTC. Requested by Taylor Morgan from SRE. Medium risk with rollback to restore the old value. Approval is pending.",
+    "expected_output": {
+      "title": "Increase checkout database connection pool",
+      "change_type": "normal",
+      "risk_level": "medium",
+      "affected_services": ["checkout", "database"],
+      "requested_by": {"name": "Taylor Morgan", "team": "SRE"},
+      "requested_at": "2026-06-16T19:00:00Z",
+      "implementation_window": {"starts_at": "2026-06-17T02:00:00Z", "ends_at": "2026-06-17T03:00:00Z"},
+      "rollback_plan": "Restore the previous checkout database connection pool value.",
+      "approval_status": "pending",
+      "business_justification": "Increasing the connection pool should reduce checkout saturation and improve reliability.",
+      "dependencies": ["database maintenance window"]
+    }
+  },
+  {
+    "case_id": "change_002",
+    "input_text": "Emergency change needed for payments routing on 2026-06-16 from 22:00 UTC to 22:30 UTC because production traffic is failing. Requested by Priya Shah from Payments. Critical risk and rollback is to revert the routing rule. Approval approved.",
+    "expected_output": {
+      "title": "Emergency payments routing change",
+      "change_type": "emergency",
+      "risk_level": "critical",
+      "affected_services": ["payments"],
+      "requested_by": {"name": "Priya Shah", "team": "Payments"},
+      "requested_at": "2026-06-16T19:05:00Z",
+      "implementation_window": {"starts_at": "2026-06-16T22:00:00Z", "ends_at": "2026-06-16T22:30:00Z"},
+      "rollback_plan": "Revert the payments routing rule to the previous production configuration.",
+      "approval_status": "approved",
+      "business_justification": "Production payments traffic is failing and routing must be corrected immediately.",
+      "reviewers": [{"name": "Operations Lead", "role": "operations"}]
+    }
+  },
+  {
+    "case_id": "change_003",
+    "input_text": "Standard change to rotate search service feature flags on 2026-06-18 from 01:00 UTC to 01:20 UTC. Requested by Marcus Lee from Search. Low risk with rollback by restoring previous flags. Approval approved.",
+    "expected_output": {
+      "title": "Rotate search service feature flags",
+      "change_type": "standard",
+      "risk_level": "low",
+      "affected_services": ["search"],
+      "requested_by": {"name": "Marcus Lee", "team": "Search"},
+      "requested_at": "2026-06-16T19:10:00Z",
+      "implementation_window": {"starts_at": "2026-06-18T01:00:00Z", "ends_at": "2026-06-18T01:20:00Z"},
+      "rollback_plan": "Restore the previous search service feature flag values.",
+      "approval_status": "approved",
+      "business_justification": "Rotating feature flags keeps the search rollout configuration current.",
+      "dependencies": ["feature flag service"]
+    }
+  },
+  {
+    "case_id": "change_004",
+    "input_text": "Normal change to upgrade authentication callback timeout settings on 2026-06-19 from 04:00 UTC to 05:00 UTC. Requested by Jordan Kim from Identity. High risk because login flow may be affected. Approval pending.",
+    "expected_output": {
+      "title": "Upgrade authentication callback timeout settings",
+      "change_type": "normal",
+      "risk_level": "high",
+      "affected_services": ["authentication"],
+      "requested_by": {"name": "Jordan Kim", "team": "Identity"},
+      "requested_at": "2026-06-16T19:15:00Z",
+      "implementation_window": {"starts_at": "2026-06-19T04:00:00Z", "ends_at": "2026-06-19T05:00:00Z"},
+      "rollback_plan": "Restore the previous authentication callback timeout settings.",
+      "approval_status": "pending",
+      "business_justification": "Timeout tuning is needed to reduce callback failures while preserving login stability.",
+      "reviewers": [{"name": "Security Reviewer", "role": "security"}]
+    }
+  },
+  {
+    "case_id": "change_005",
+    "input_text": "Emergency change to disable the checkout recommendation widget on 2026-06-16 from 21:15 UTC to 21:45 UTC. Requested by Alex Rivera from Web Platform. High risk. Rollback by re-enabling the widget flag. Approval approved.",
+    "expected_output": {
+      "title": "Disable checkout recommendation widget",
+      "change_type": "emergency",
+      "risk_level": "high",
+      "affected_services": ["checkout", "recommendations"],
+      "requested_by": {"name": "Alex Rivera", "team": "Web Platform"},
+      "requested_at": "2026-06-16T19:20:00Z",
+      "implementation_window": {"starts_at": "2026-06-16T21:15:00Z", "ends_at": "2026-06-16T21:45:00Z"},
+      "rollback_plan": "Re-enable the checkout recommendation widget feature flag.",
+      "approval_status": "approved",
+      "business_justification": "Disabling the widget mitigates checkout instability during the incident.",
+      "dependencies": ["feature flag service"]
+    }
+  },
+  {
+    "case_id": "change_006",
+    "input_text": "Standard change to update analytics retention policy on 2026-06-20 from 06:00 UTC to 06:30 UTC. Requested by Nina Patel from Data Platform. Low risk. Rollback by restoring previous retention settings. Approval pending.",
+    "expected_output": {
+      "title": "Update analytics retention policy",
+      "change_type": "standard",
+      "risk_level": "low",
+      "affected_services": ["analytics"],
+      "requested_by": {"name": "Nina Patel", "team": "Data Platform"},
+      "requested_at": "2026-06-16T19:25:00Z",
+      "implementation_window": {"starts_at": "2026-06-20T06:00:00Z", "ends_at": "2026-06-20T06:30:00Z"},
+      "rollback_plan": "Restore the previous analytics retention policy settings.",
+      "approval_status": "pending",
+      "business_justification": "The retention update aligns analytics storage with current policy requirements."
+    }
+  },
+  {
+    "case_id": "change_007",
+    "input_text": "Normal change to migrate notification queue workers on 2026-06-21 from 03:00 UTC to 04:30 UTC. Requested by Omar Chen from Messaging. Medium risk. Rollback by returning traffic to the old worker group. Approval pending.",
+    "expected_output": {
+      "title": "Migrate notification queue workers",
+      "change_type": "normal",
+      "risk_level": "medium",
+      "affected_services": ["notifications", "queue_workers"],
+      "requested_by": {"name": "Omar Chen", "team": "Messaging"},
+      "requested_at": "2026-06-16T19:30:00Z",
+      "implementation_window": {"starts_at": "2026-06-21T03:00:00Z", "ends_at": "2026-06-21T04:30:00Z"},
+      "rollback_plan": "Return notification traffic to the old worker group.",
+      "approval_status": "pending",
+      "business_justification": "Worker migration improves notification queue capacity and reliability.",
+      "dependencies": ["queue routing"]
+    }
+  },
+  {
+    "case_id": "change_008",
+    "input_text": "Emergency change to block malformed API tokens at the gateway on 2026-06-16 from 23:00 UTC to 23:20 UTC. Requested by Samira Noor from Security. Critical risk. Rollback by removing the gateway rule. Approval approved.",
+    "expected_output": {
+      "title": "Block malformed API tokens at gateway",
+      "change_type": "emergency",
+      "risk_level": "critical",
+      "affected_services": ["gateway", "api"],
+      "requested_by": {"name": "Samira Noor", "team": "Security"},
+      "requested_at": "2026-06-16T19:35:00Z",
+      "implementation_window": {"starts_at": "2026-06-16T23:00:00Z", "ends_at": "2026-06-16T23:20:00Z"},
+      "rollback_plan": "Remove the malformed token blocking rule from the gateway.",
+      "approval_status": "approved",
+      "business_justification": "Blocking malformed tokens mitigates active gateway abuse.",
+      "reviewers": [{"name": "Security Reviewer", "role": "security"}]
+    }
+  },
+  {
+    "case_id": "change_009",
+    "input_text": "Normal change to upgrade billing service container image on 2026-06-22 from 02:00 UTC to 03:00 UTC. Requested by Daniel Cho from Billing. Medium risk. Rollback by redeploying the previous image. Approval rejected.",
+    "expected_output": {
+      "title": "Upgrade billing service container image",
+      "change_type": "normal",
+      "risk_level": "medium",
+      "affected_services": ["billing"],
+      "requested_by": {"name": "Daniel Cho", "team": "Billing"},
+      "requested_at": "2026-06-16T19:40:00Z",
+      "implementation_window": {"starts_at": "2026-06-22T02:00:00Z", "ends_at": "2026-06-22T03:00:00Z"},
+      "rollback_plan": "Redeploy the previous billing service container image.",
+      "approval_status": "rejected",
+      "business_justification": "The billing image upgrade would apply runtime fixes, but approval was rejected."
+    }
+  },
+  {
+    "case_id": "change_010",
+    "input_text": "Standard change to refresh CDN cache rules on 2026-06-23 from 05:00 UTC to 05:15 UTC. Requested by Emma Stone from Edge Platform. Low risk. Rollback by restoring the previous CDN rule set. Approval approved.",
+    "expected_output": {
+      "title": "Refresh CDN cache rules",
+      "change_type": "standard",
+      "risk_level": "low",
+      "affected_services": ["cdn"],
+      "requested_by": {"name": "Emma Stone", "team": "Edge Platform"},
+      "requested_at": "2026-06-16T19:45:00Z",
+      "implementation_window": {"starts_at": "2026-06-23T05:00:00Z", "ends_at": "2026-06-23T05:15:00Z"},
+      "rollback_plan": "Restore the previous CDN cache rule set.",
+      "approval_status": "approved",
+      "business_justification": "Refreshing CDN cache rules keeps edge behavior aligned with current routing policy."
+    }
+  }
+]

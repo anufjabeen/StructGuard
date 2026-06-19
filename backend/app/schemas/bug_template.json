@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "BugTicket",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "title",
+    "severity",
+    "component",
+    "environment",
+    "steps_to_reproduce",
+    "expected_behavior",
+    "actual_behavior",
+    "reported_at",
+    "status"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 120
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"]
+    },
+    "component": {
+      "type": "string"
+    },
+    "environment": {
+      "type": "string",
+      "enum": ["production", "staging", "development", "test"]
+    },
+    "steps_to_reproduce": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "expected_behavior": {
+      "type": "string",
+      "minLength": 10
+    },
+    "actual_behavior": {
+      "type": "string",
+      "minLength": 10
+    },
+    "reported_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "browser": {
+      "type": "string"
+    },
+    "os": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["new", "triaged", "in_progress", "fixed", "wont_fix"]
+    },
+    "assignee": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "team": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
+

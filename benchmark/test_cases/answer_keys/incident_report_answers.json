@@ -1,0 +1,150 @@
+[
+  {
+    "case_id": "incident_001",
+    "input_text": "Checkout stopped working at 2026-06-16T10:14:00Z. Severity is critical and about 500 users are affected. SRE is investigating.",
+    "expected_output": {
+      "title": "Checkout stopped working",
+      "severity": "critical",
+      "affected_service": "checkout",
+      "reported_at": "2026-06-16T10:14:00Z",
+      "affected_users": 500,
+      "description": "Checkout stopped working and prevented about 500 users from completing the workflow.",
+      "status": "investigating",
+      "assignee": {
+        "name": "Unassigned",
+        "team": "SRE"
+      }
+    }
+  },
+  {
+    "case_id": "incident_002",
+    "input_text": "Search latency increased in production at 2026-06-16T11:05:00Z. Impact is low, no users are blocked, and the incident is still open.",
+    "expected_output": {
+      "title": "Search latency increased",
+      "severity": "low",
+      "affected_service": "search",
+      "reported_at": "2026-06-16T11:05:00Z",
+      "affected_users": 0,
+      "description": "Search latency increased in production, but no users are blocked by the incident.",
+      "status": "open"
+    }
+  },
+  {
+    "case_id": "incident_003",
+    "input_text": "Payments API returned 500 errors from 2026-06-16T09:20:00Z. Severity high. 220 users could not complete purchases. Payments team is investigating.",
+    "expected_output": {
+      "title": "Payments API returned 500 errors",
+      "severity": "high",
+      "affected_service": "payments",
+      "reported_at": "2026-06-16T09:20:00Z",
+      "affected_users": 220,
+      "description": "Payments API returned 500 errors and prevented 220 users from completing purchases.",
+      "status": "investigating",
+      "assignee": {
+        "name": "Unassigned",
+        "team": "Payments"
+      }
+    }
+  },
+  {
+    "case_id": "incident_004",
+    "input_text": "Authentication callbacks intermittently failed around 2026-06-16T12:45:00Z. Medium severity, about 35 users affected, status investigating.",
+    "expected_output": {
+      "title": "Authentication callbacks failed intermittently",
+      "severity": "medium",
+      "affected_service": "authentication",
+      "reported_at": "2026-06-16T12:45:00Z",
+      "affected_users": 35,
+      "description": "Authentication callbacks intermittently failed and affected about 35 users.",
+      "status": "investigating"
+    }
+  },
+  {
+    "case_id": "incident_005",
+    "input_text": "Inventory cache served stale stock counts at 2026-06-16T13:30:00Z. Medium severity. No users were blocked. The issue was resolved after cache invalidation.",
+    "expected_output": {
+      "title": "Inventory cache served stale stock counts",
+      "severity": "medium",
+      "affected_service": "inventory",
+      "reported_at": "2026-06-16T13:30:00Z",
+      "affected_users": 0,
+      "description": "Inventory cache served stale stock counts, but no users were blocked.",
+      "root_cause": "Stale cache entries required invalidation.",
+      "resolution_steps": ["Invalidate inventory cache entries"],
+      "status": "resolved"
+    }
+  },
+  {
+    "case_id": "incident_006",
+    "input_text": "Email notifications were delayed starting 2026-06-16T14:10:00Z. Low severity. 1200 users received late notifications and the incident remains open.",
+    "expected_output": {
+      "title": "Email notifications were delayed",
+      "severity": "low",
+      "affected_service": "email",
+      "reported_at": "2026-06-16T14:10:00Z",
+      "affected_users": 1200,
+      "description": "Email notifications were delayed and 1200 users received notifications late.",
+      "status": "open"
+    }
+  },
+  {
+    "case_id": "incident_007",
+    "input_text": "Primary database failover started at 2026-06-16T15:02:00Z after the primary node became unreachable. Critical severity. 3200 users saw checkout errors. SRE is investigating.",
+    "expected_output": {
+      "title": "Primary database failover started",
+      "severity": "critical",
+      "affected_service": "database",
+      "reported_at": "2026-06-16T15:02:00Z",
+      "affected_users": 3200,
+      "description": "Primary database failover started after the primary node became unreachable and users saw checkout errors.",
+      "root_cause": "Primary database node became unreachable.",
+      "status": "investigating",
+      "assignee": {
+        "name": "Unassigned",
+        "team": "SRE"
+      }
+    }
+  },
+  {
+    "case_id": "incident_008",
+    "input_text": "Feature flag service timed out at 2026-06-16T16:18:00Z and blocked rollout checks. High severity, 80 internal users affected. Restarting the service resolved it.",
+    "expected_output": {
+      "title": "Feature flag service timed out",
+      "severity": "high",
+      "affected_service": "feature_flags",
+      "reported_at": "2026-06-16T16:18:00Z",
+      "affected_users": 80,
+      "description": "Feature flag service timed out and blocked rollout checks for internal users.",
+      "resolution_steps": ["Restart feature flag service"],
+      "status": "resolved"
+    }
+  },
+  {
+    "case_id": "incident_009",
+    "input_text": "The CDN TLS certificate expired at 2026-06-16T17:40:00Z for storefront traffic. Critical severity. Around 10000 users could not load the site. Certificate renewal resolved the incident.",
+    "expected_output": {
+      "title": "CDN TLS certificate expired",
+      "severity": "critical",
+      "affected_service": "cdn",
+      "reported_at": "2026-06-16T17:40:00Z",
+      "affected_users": 10000,
+      "description": "The CDN TLS certificate expired for storefront traffic and users could not load the site.",
+      "resolution_steps": ["Renew CDN TLS certificate"],
+      "status": "resolved"
+    }
+  },
+  {
+    "case_id": "incident_010",
+    "input_text": "Analytics ingestion backlog began at 2026-06-16T18:25:00Z. Low severity. No user-facing impact, affected service analytics, status open.",
+    "expected_output": {
+      "title": "Analytics ingestion backlog began",
+      "severity": "low",
+      "affected_service": "analytics",
+      "reported_at": "2026-06-16T18:25:00Z",
+      "affected_users": 0,
+      "description": "Analytics ingestion backlog began with no user-facing impact.",
+      "status": "open"
+    }
+  }
+]
+

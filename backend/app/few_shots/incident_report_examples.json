@@ -1,0 +1,31 @@
+[
+  {
+    "input_text": "Payments API started returning 500s at 2026-06-16T09:20:00Z. About 220 users could not complete checkout. SRE is investigating.",
+    "output": {
+      "title": "Payments API returning 500 errors",
+      "severity": "high",
+      "affected_service": "payments",
+      "reported_at": "2026-06-16T09:20:00Z",
+      "affected_users": 220,
+      "description": "Payments API started returning 500 errors and blocked users from completing checkout.",
+      "status": "investigating",
+      "assignee": {
+        "name": "Unassigned",
+        "team": "SRE"
+      }
+    }
+  },
+  {
+    "input_text": "Search latency increased in production around 2026-06-16T11:05:00Z. Impact is minor and no users are blocked.",
+    "output": {
+      "title": "Search latency increased in production",
+      "severity": "low",
+      "affected_service": "search",
+      "reported_at": "2026-06-16T11:05:00Z",
+      "affected_users": 0,
+      "description": "Search latency increased in production, but the impact is minor and users are not blocked.",
+      "status": "open"
+    }
+  }
+]
+
